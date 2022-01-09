@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html data-ng-app='ChiApp'>
+<head>
+    <title>Angular JS Application</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="resources/css/app.css"/>
+</head>
+
+<body>
+<div id="page">
+    <!-- Create the login form -->
+    <section class = "LoginForm" data-ng-controller="LoginController">
+        <form data-ng-submit="login(user)" data-ng-hide="successful">
+            Email: <input email="email" data-ng-model="user.email" />
+            Password: <input type="password" password="password" data-ng-model="user.password" />
+            <button type="submit">Login</button>
+        </form>
+        <form data-ng-submit="logout()" data-ng-show="successful">
+            <button type="submit">Logout</button>
+        </form>
+        <section data-ng-show="loginFailed">Email or Password are incorrect.</section>
+    </section>
+
+
+    <!-- Declare the controller that will be used on page load -->
+    <section data-ng-controller="IndexController">
+        <!-- use double braces to refer to a property defined in IndexController -->
+        <h1>{{title}}</h1>
+        <h2>{{author}}</h2>
+        <h3>{{coursetitle}}</h3>
+        <nav>
+            <ul>
+                <!-- Create the nav bar using the information taken from the controller -->
+                <li data-ng-repeat="navitem in navitems"><a href="{{navitem.url}}">{{navitem.name}}</a></li>
+            </ul>
+        </nav>
+    </section>
+    <article data-ng-view></article>
+</div>
+
+<!-- load the basic angular libraries, though initially we'll only need the first two -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular-route.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular-resource.js"></script>
+
+<!-- link to our application files -->
+<script src="js/app.js"></script>
+<script src="js/controllers.js"></script>
+<script src="js/services.js"></script>
+
+</body>
+</html>

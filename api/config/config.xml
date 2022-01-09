@@ -1,0 +1,8 @@
+<config>
+   <title>CHI Schedule</title>
+   <username>John</username>
+   <email>john@example.com</email>
+   <password>johnpassword</password>
+   <dbname>sqlite:db/chi2019.sqlite</dbname>
+   <secretkey>piyvbpoubwerfbeirbuwoiqebfdvpoibusdbvaisdfbgisdgb</secretkey>
+</config>
